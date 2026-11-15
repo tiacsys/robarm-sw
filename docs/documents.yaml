@@ -1,0 +1,61 @@
+# zdocs registry of robarm-sw (doc-architecture.md §3).
+# It lists this repo's own documents first, then the upstream documents. Upstream documents are
+# built locally from their west checkouts (doc_dir), so that links into upstream needs resolve
+# in this build (D35). Indirect upstream documents are listed by hand until zdocs #26/#27 land.
+# Format: tools/zdocs/doc/manual/reference/registry-schema.rst.
+# base_url is only used for links outside the HTML tree (PDFs, iteration 2).
+base_url: "https://tiacsys.github.io/robarm-manifest/"
+
+groups:
+  - id: g-sw
+    title: "Software"
+  - id: g-sys
+    title: "System"
+
+documents:
+  # own documents
+  sw-req:
+    title: "SW Requirements Specification"
+    group: g-sw
+    version_project: robarm-sw
+    builders: [html]
+    needs: {source: json}
+  sw-arch:
+    title: "SW Architecture and Design"
+    group: g-sw
+    version_project: robarm-sw
+    builders: [html]
+    needs: {source: json}
+  sw-api:
+    title: "SW API and Implementation"
+    group: g-sw
+    kind: doxygen
+    version_project: robarm-sw
+  sw-test-spec:
+    title: "SW Test Specification"
+    group: g-sw
+    version_project: robarm-sw
+    builders: [html]
+    needs: {source: json}
+  sw-test-report:
+    title: "SW Test Report"
+    group: g-sw
+    version_project: robarm-sw
+    builders: [html]
+    needs: {source: json}
+
+  # upstream documents (built locally from the sibling west projects, D35)
+  se-req:
+    title: "Stakeholder and System Requirements Specification"
+    group: g-sys
+    doc_dir: ../../robarm-syseng/docs/se-req
+    version_project: robarm-syseng
+    builders: [html]
+    needs: {source: json}
+  se-arch:
+    title: "System Architecture"
+    group: g-sys
+    doc_dir: ../../robarm-syseng/docs/se-arch
+    version_project: robarm-syseng
+    builders: [html]
+    needs: {source: json}

@@ -1,0 +1,19 @@
+# Doxygen configuration of the document "SW API and Implementation" (sw-api).
+# zdocs expands @...@ and appends the keys it owns (output folders, tag files, theme).
+# Format: tools/zdocs/doc/manual/reference/registry-schema.rst ("Doxyfile keys the engine owns").
+PROJECT_NAME           = "SW API and Implementation"
+PROJECT_BRIEF          = "robarm-sw: code units of the robot arm firmware"
+OUTPUT_DIRECTORY       = @DOXY_OUT@
+INPUT                  = @DOXY_SRC_DIR@/mainpage.md @ZDOCS_PROJECT_BASE@/app/src
+USE_MDFILE_AS_MAINPAGE = @DOXY_SRC_DIR@/mainpage.md
+FILE_PATTERNS          = *.c *.h *.md
+RECURSIVE              = YES
+OPTIMIZE_OUTPUT_FOR_C  = YES
+EXTRACT_ALL            = NO
+EXTRACT_STATIC         = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_NO_PARAMDOC       = YES
+QUIET                  = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+SOURCE_BROWSER         = YES
