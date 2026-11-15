@@ -1,0 +1,11 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Devicetree overlay of the robot arm firmware for the NUCLEO-G474RE board.
+ *
+ * Placeholder. The joints (compatible "robot,joint", see dts/bindings/) and the buses to the
+ * PCA9685 and MCP3208 breakouts come in Phase 5.
+ */
+
+/ {
+};

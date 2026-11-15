@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: Apache-2.0
+# Smoke test: shows that the ztest set-up of robarm-sw builds and runs. It verifies no requirement.
+tests:
+  robarm.smoke:
+    platform_allow:
+      - native_sim
+    integration_platforms:
+      - native_sim
+    tags: robarm

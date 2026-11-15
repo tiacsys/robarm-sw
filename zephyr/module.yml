@@ -1,0 +1,8 @@
+# robarm-sw is a Zephyr module (D114): Zephyr finds our devicetree bindings (dts/bindings/) and,
+# later, our own boards (boards/) through it. In the workspace, west lists the module, so no
+# ZEPHYR_EXTRA_MODULES is needed.
+name: robarm-sw
+build:
+  settings:
+    dts_root: .
+    board_root: .

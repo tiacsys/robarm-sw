@@ -1,0 +1,2 @@
+# Vendor prefixes of the compatibles in our own bindings (format: zephyr/dts/bindings/vendor-prefixes.txt).
+robot	Robot arm example of XDMOD (robarm-sw, own bindings)

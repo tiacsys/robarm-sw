@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: Apache-2.0
+description: |
+  One joint of the robot arm.
+
+  A devicetree node with this compatible describes the hardware of one joint: its actuator and
+  its angle sensor. The property trace-id holds the ID of the system model element that the node
+  realizes. Trace IDs are kept in this binding of our own and never put on upstream nodes, so the
+  devicetree check (CK-F2) can compare the devicetree with the model.
+
+compatible: "robot,joint"
+
+properties:
+  trace-id:
+    type: string
+    required: true
+    description: |
+      Trace ID of the model element this joint realizes, for example a SYS-EL ID from
+      robarm-syseng.
