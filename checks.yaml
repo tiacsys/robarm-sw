@@ -1,0 +1,31 @@
+# What `curatrix check robarm-sw` runs (format: xdmod/curatrix/README.md, "checks.yaml").
+version: 1
+area: robarm-sw
+
+docs:                                   # CK-A6 strict docs build (SW docs + upstream se-req, se-arch)
+  registry: docs/documents.yaml
+
+ids:                                    # CK-C1, CK-C2
+  ledger: ids.yaml
+  exclude: ["*.md", "claude/**", ".github/**"]
+
+requirements: true                      # CK-E2, CK-E3 on the SW requirements
+
+# Firmware build and unit tests (CK-F5). They need the Zephyr SDK (tools.yaml), not CAD tools, so
+# they also run in PR CI (D101). Output goes to build/robarm-sw/. The devicetree check (CK-F2)
+# is added once the model has the joint interfaces.
+commands:
+  - id: CK-F5a
+    name: firmware builds for nucleo_g474re
+    run: ["west", "build", "--pristine", "auto", "-b", "nucleo_g474re",
+          "-d", "{ws}/build/{area}/app/nucleo_g474re", "{repo}/app"]
+    use: west-build
+    cwd: "{ws}"
+    stages: [local, pr, baseline]
+  - id: CK-F5b
+    name: ztest suites pass on native_sim (Twister)
+    run: ["{python}", "{ws}/zephyr/scripts/twister", "-T", "{repo}/tests", "-p", "native_sim",
+          "-O", "{ws}/build/{area}/twister", "--inline-logs"]
+    use: tests
+    cwd: "{ws}"
+    stages: [local, pr, baseline]

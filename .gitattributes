@@ -1,0 +1,7 @@
+# Line endings, diff drivers and GitHub hints (repo-layouts.md §1).
+* text=auto eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.overlay text eol=lf
+*.conf text eol=lf
+*.yaml text eol=lf

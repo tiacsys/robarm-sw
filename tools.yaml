@@ -1,0 +1,31 @@
+# Tools that robarm-sw needs on top of xdmod/tools.yaml (D19).
+# Format: xdmod/curatrix/README.md ("tools.yaml").
+tools:
+  # Zephyr SDK 1.0.1, ARM toolchain only (D138): the minimal SDK plus the arm-zephyr-eabi GNU
+  # toolchain, both from the sdk-ng release, sha256 from its sha256.sum. The toolchain unpacks
+  # into the SDK folder, so it must come after the SDK in this list.
+  # A workspace where the SDK is already unpacked in .venv/opt/zephyr-sdk-1.0.1 takes it over
+  # without a new download: `curatrix bootstrap --role sw --adopt` (or `curatrix update --adopt`).
+  - name: zephyr-sdk
+    version: "1.0.1"
+    kind: tarball
+    url: https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v1.0.1/zephyr-sdk-1.0.1_linux-x86_64_minimal.tar.xz
+    sha256: ca9bc0ff66fafca1dac9d592a36d953cf16d096a9d09b1c0357f021cf9f6a7eb
+    location: opt/zephyr-sdk-1.0.1
+    strip: 1
+    env: {ZEPHYR_SDK_INSTALL_DIR: "{location}"}
+    roles: [sw, integration, full]
+  - name: zephyr-sdk-arm
+    version: "1.0.1"
+    kind: tarball
+    url: https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v1.0.1/toolchain_gnu_linux-x86_64_arm-zephyr-eabi.tar.xz
+    sha256: 21b85981cb5a1818d9bc53d82af80f208946ec038b982ff1907287572ed3a634
+    location: opt/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi
+    strip: 1
+    roles: [sw, integration, full]
+
+system:
+  # sw-api is a Doxygen document (zdocs kind: doxygen).
+  - {name: doxygen, version: "1.18.0", roles: [sw, integration, full]}
+  # native_sim builds the tests with the host C compiler.
+  - {name: gcc, version: "any", roles: [sw, integration, full]}

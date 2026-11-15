@@ -1,0 +1,12 @@
+# pip packages that robarm-sw needs on top of xdmod/requirements.txt (D19): what the Zephyr build
+# and Twister import. Pin every package with ==. west, PyYAML, pykwalify, jsonschema, packaging
+# and colorama are already pinned in xdmod/requirements.txt.
+anytree==2.13.0
+junitparser==5.0.3
+natsort==8.4.0
+ply==3.11
+psutil==7.2.2
+pyelftools==0.33
+pyserial==3.5
+python-dotenv==1.2.3
+tabulate==0.10.0
