@@ -4,7 +4,7 @@ Software of the robot arm example of [XDMOD](https://github.com/tiacsys/xdmod): 
 for the NUCLEO-G474RE board, its tests, and the SW documents.
 
 Status: **skeleton** (Phase 4). A minimal application, one smoke test, the structure, the checks
-and empty documents are in place; the content comes in Phase 5.
+and empty documents are in place; the content comes in Phase 6.
 
 ## Layout
 
