@@ -5,7 +5,7 @@ This document holds the requirements on the software of the robot arm.
 
 .. note::
 
-   This is a skeleton. The content comes in Phase 5.
+   This is a skeleton. The content comes in Phase 6.
 
 What will go here
 -----------------

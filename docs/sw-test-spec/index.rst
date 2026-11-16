@@ -5,7 +5,7 @@ This document lists the software test cases and what each one verifies.
 
 .. note::
 
-   This is a skeleton. The content comes in Phase 5.
+   This is a skeleton. The content comes in Phase 6.
 
 What will go here
 -----------------

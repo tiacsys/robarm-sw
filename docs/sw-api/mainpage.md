@@ -2,7 +2,7 @@
 
 This document is built by Doxygen from the source code of the robot arm firmware in `app/`.
 
-**Skeleton.** The content comes in Phase 5.
+**Skeleton.** The content comes in Phase 6.
 
 What will go here:
 
