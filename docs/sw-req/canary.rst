@@ -15,6 +15,7 @@ of the robot arm firmware.
    :unit: ms
    :max: 1
    :verification_method: test
+   :verification_scope: logical
    :configs: SYS-CFG-0001
 
    When the canary input changes, the canary software shall return the new output value within 1 ms.
