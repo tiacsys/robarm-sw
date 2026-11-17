@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: Apache-2.0
+# Canary test (plan task 5.3): the end of the canary trace chain, configuration canary (SYS-CFG-0001).
+tests:
+  robarm.canary:
+    platform_allow:
+      - native_sim
+    integration_platforms:
+      - native_sim
+    tags: robarm canary

@@ -19,3 +19,8 @@ What will go here
 
 In iteration 1 the architecture is written in reStructuredText. A SysML sub-model of the software
 may follow in iteration 2.
+
+.. toctree::
+   :maxdepth: 1
+
+   canary
