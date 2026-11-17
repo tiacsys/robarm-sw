@@ -33,10 +33,18 @@ commands:
     use: tests
     cwd: "{ws}"
     stages: [local, pr, baseline]
+    before_docs: true                   # the SW test report of the same run shows its results
+  - id: CK-F5c
+    name: Twister results as preview TR needs for the SW test report
+    run: ["{python}", "-m", "curatrix", "evidence", "preview", "{ws}/build/{area}/twister",
+          "-o", "{ws}/build/{area}/evidence-preview/tr-needs.json", "--tests", "{repo}/tests"]
+    cwd: "{ws}"
+    stages: [local, pr, baseline]
+    before_docs: true
 
 # CK-H6: exactly the checks this repo runs (built-in and commands). A section that goes
 # missing turns an expected check off, and CK-H6 fails.
 expect: [
   CK-A1, CK-A3, CK-A6, CK-B1, CK-B2, CK-B3, CK-B5, CK-B6, CK-B7, CK-C1, CK-C2, CK-D6,
-  CK-E2, CK-E3, CK-F5a, CK-F5b, CK-G1, CK-G2, CK-H1, CK-H2, CK-H3, CK-H4, CK-H6, CK-H7
+  CK-E2, CK-E3, CK-F5a, CK-F5b, CK-F5c, CK-G1, CK-G2, CK-H1, CK-H2, CK-H3, CK-H4, CK-H6, CK-H7
 ]
