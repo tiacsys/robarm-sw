@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(os.environ["ZDOCS_WEST_TOPDIR"]) / "xdmod" / "sphinx
 from xdmod_conf import area_of, configure, repo_root, workspace  # noqa: E402
 
 REPO = repo_root(__file__)
-# preview TR needs of the local check run (CK-F5c, before the docs build); absent in CI without Twister
+# preview TR needs and their run stamp from the check run (CK-F5c, before the docs build);
+# absent when Twister did not run in this check run
 configure(globals(), __file__, "SW Test Report",
-          generated=[(workspace() / "build" / area_of(REPO), "evidence-preview/tr-needs.json")])
+          generated=[(workspace() / "build" / area_of(REPO), "checks/preview/*.json")])

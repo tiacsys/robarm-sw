@@ -37,9 +37,10 @@ commands:
   - id: CK-F5c
     name: Twister results as preview TR needs for the SW test report
     run: ["{python}", "-m", "curatrix", "evidence", "preview", "{ws}/build/{area}/twister",
-          "-o", "{ws}/build/{area}/evidence-preview/tr-needs.json", "--tests", "{repo}/tests"]
+          "-o", "{build}/preview/tr-needs.json", "--tests", "{repo}/tests", "--commit-of", "{repo}"]
+    use: script
     cwd: "{ws}"
-    stages: [local, pr, baseline]
+    stages: [local, pr]                 # never at baseline: a preview is never evidence (D60)
     before_docs: true
 
 # CK-H6: exactly the checks this repo runs (built-in and commands). A section that goes
