@@ -11,6 +11,10 @@ ids:                                    # CK-C1, CK-C2
 
 requirements: true                      # CK-E2, CK-E3 on the SW requirements
 
+code:                                   # CK-D6: code units (@xdid) and test cases (above ZTEST)
+  sources: ["app/src/**/*.[ch]"]        # -> generated/code-needs.json (`curatrix gen code-needs robarm-sw`)
+  tests: ["tests/**/*.c"]
+
 # Firmware build and unit tests (CK-F5). They need the Zephyr SDK (tools.yaml), not CAD tools, so
 # they also run in PR CI (D101). Output goes to build/robarm-sw/. The devicetree check (CK-F2)
 # is added once the model has the joint interfaces.
@@ -33,6 +37,6 @@ commands:
 # CK-H6: exactly the checks this repo runs (built-in and commands). A section that goes
 # missing turns an expected check off, and CK-H6 fails.
 expect: [
-  CK-A1, CK-A3, CK-A6, CK-B1, CK-B2, CK-B3, CK-B5, CK-B6, CK-C1, CK-C2, CK-E2,
-  CK-E3, CK-F5a, CK-F5b, CK-G1, CK-G2, CK-H1, CK-H2, CK-H3, CK-H4, CK-H6, CK-H7
+  CK-A1, CK-A3, CK-A6, CK-B1, CK-B2, CK-B3, CK-B5, CK-B6, CK-B7, CK-C1, CK-C2, CK-D6,
+  CK-E2, CK-E3, CK-F5a, CK-F5b, CK-G1, CK-G2, CK-H1, CK-H2, CK-H3, CK-H4, CK-H6, CK-H7
 ]

@@ -19,6 +19,7 @@
  *
  * @xdid{SW-IMPL-0001}
  * Implements SW-DD-0001.
+ * Configs: SYS-CFG-0001.
  *
  * @param input The new canary input value.
  * @return The new output value; it equals @p input.

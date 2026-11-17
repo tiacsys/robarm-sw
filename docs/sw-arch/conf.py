@@ -9,4 +9,5 @@ sys.path.insert(0, str(Path(os.environ["ZDOCS_WEST_TOPDIR"]) / "xdmod" / "sphinx
 from xdmod_conf import configure, repo_root  # noqa: E402
 
 REPO = repo_root(__file__)
-configure(globals(), __file__, "SW Architecture and Design")
+configure(globals(), __file__, "SW Architecture and Design",
+          generated=[(REPO, "generated/code-needs.json")])
