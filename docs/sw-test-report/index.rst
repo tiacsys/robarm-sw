@@ -18,9 +18,10 @@ Results of the local test run
 -----------------------------
 
 ``curatrix check robarm-sw`` runs the Twister tests (CK-F5b) and turns their results into test
-result needs (CK-F5c) before it builds this document. They are previews: they show this build's
-run and are never evidence. Published results come from the ``evidence`` branch of
-robarm-integration.
+result needs (CK-F5c) before it builds this document. They are previews and never evidence. They
+are shown only with the date and commit of their run, and only while the repo is still at that
+commit. Published results come from the ``evidence`` branch of robarm-integration.
 
-.. xd-needimport:: /evidence-preview/tr-needs.json
-   :missing: No local test run: this build ran without Twister, so it shows no test results.
+.. xd-needimport:: /checks/preview/tr-needs.json
+   :stamp:
+   :missing: No local test run of this commit: this build shows no test results.
