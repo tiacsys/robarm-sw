@@ -6,7 +6,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(os.environ["ZDOCS_WEST_TOPDIR"]) / "xdmod" / "sphinx"))
-from xdmod_conf import configure, repo_root  # noqa: E402
+from xdmod_conf import area_of, configure, repo_root, workspace  # noqa: E402
 
 REPO = repo_root(__file__)
-configure(globals(), __file__, "SW Test Report")
+# preview TR needs of the local check run (CK-F5c, before the docs build); absent in CI without Twister
+configure(globals(), __file__, "SW Test Report",
+          generated=[(workspace() / "build" / area_of(REPO), "evidence-preview/tr-needs.json")])
