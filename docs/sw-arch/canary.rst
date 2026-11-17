@@ -11,7 +11,8 @@ chain that tests the tools (plan task 5.3). It is not part of the robot arm firm
    :satisfies: SW-REQ-0001
    :configs: SYS-CFG-0001
 
-   The software part of the canary unit: one function in ``app/src/canary.c``.
+   The software part of the canary unit: one function in ``app/src/canary.c``. It is not linked
+   into the robot arm firmware; only the test ``tests/canary`` builds it.
 
 .. sw-dd:: canary_update()
    :id: SW-DD-0001
