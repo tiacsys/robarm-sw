@@ -1,0 +1,39 @@
+{
+  "created": "",
+  "current_version": "",
+  "project": "robarm-sw-code",
+  "versions": {
+    "": {
+      "needs": {
+        "SW-IMPL-0001": {
+          "configs": [
+            "SYS-CFG-0001"
+          ],
+          "content": "Return the new canary output for an input value.\n\nDeclared in ``app/src/canary.h``: ``int32_t canary_update(int32_t input)``.",
+          "id": "SW-IMPL-0001",
+          "implements": [
+            "SW-DD-0001"
+          ],
+          "source_file": "app/src/canary.h",
+          "status": "valid",
+          "title": "canary_update()",
+          "type": "sw-impl"
+        },
+        "SW-TC-0001": {
+          "configs": [
+            "SYS-CFG-0001"
+          ],
+          "content": "ZTEST ``test_output_follows_input`` in suite ``canary`` (``tests/canary/src/main.c``). Twister reports it as ``robarm.canary.canary.output_follows_input``.",
+          "id": "SW-TC-0001",
+          "source_file": "tests/canary/src/main.c",
+          "status": "valid",
+          "title": "The canary output follows a changed input within 1 ms",
+          "type": "sw-tc",
+          "verifies": [
+            "SW-REQ-0001"
+          ]
+        }
+      }
+    }
+  }
+}

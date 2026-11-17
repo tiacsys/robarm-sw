@@ -17,7 +17,7 @@ ZTEST_SUITE(canary, NULL, NULL, NULL, NULL, NULL);
 /**
  * @brief The canary output follows a changed input within 1 ms.
  *
- * Test case: SW-TC-0001. Verifies SW-REQ-0001.
+ * Test case: SW-TC-0001. Verifies SW-REQ-0001. Configs: SYS-CFG-0001.
  */
 ZTEST(canary, test_output_follows_input)
 {
