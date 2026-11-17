@@ -17,3 +17,5 @@ QUIET                  = YES
 GENERATE_HTML          = YES
 GENERATE_LATEX         = NO
 SOURCE_BROWSER         = YES
+# Trace ID of a code unit (SW-IMPL, D77), e.g. @xdid{SW-IMPL-nnnn}
+ALIASES                = "xdid{1}=@par Trace ID^^\1"
