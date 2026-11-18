@@ -6,8 +6,9 @@ rules of this repo. Run every command from the workspace root.
 ## What this repo is
 
 Zephyr firmware for the NUCLEO-G474RE (`app/`), our own devicetree bindings (`dts/bindings/`),
-ztest suites (`tests/`), and five documents: `sw-req`, `sw-arch`, `sw-api` (Doxygen),
-`sw-test-spec`, `sw-test-report`. The repo is a Zephyr module (`zephyr/module.yml`, D114).
+ztest suites (`tests/`), and the documents `sw-req`, `sw-arch`, `sw-api` (Doxygen),
+`sw-test-spec`, `sw-test-report`, plus one firmware document per image in `docs/firmware/fw-<name>/`
+(`fw-robarm-app`; registry `doc_dir`, tiacsys/xdmod#69 Q8, checked by CK-A7). The repo is a Zephyr module (`zephyr/module.yml`, D114).
 
 ## Build and test
 

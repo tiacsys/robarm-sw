@@ -19,6 +19,7 @@ and empty documents are in place; the content comes in Phase 6.
 | `docs/sw-api/` | SW API and Implementation (Doxygen) |
 | `docs/sw-test-spec/` | SW Test Specification |
 | `docs/sw-test-report/` | SW Test Report |
+| `docs/firmware/fw-robarm-app/` | Firmware: robarm_app (one document per firmware image: build configuration, board, version, size) |
 | `ids.yaml` | ID ledger for `SW-*` IDs |
 | `checks.yaml` | what `curatrix check robarm-sw` runs (docs, IDs, firmware build, tests) |
 | `tools.yaml` | Zephyr SDK 1.0.1 with the ARM toolchain |
