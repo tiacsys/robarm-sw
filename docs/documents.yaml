@@ -44,6 +44,14 @@ documents:
     builders: [html]
     needs: {source: json}
 
+  fw-robarm-app:
+    title: "Firmware: robarm_app"
+    group: g-sw
+    doc_dir: firmware/fw-robarm-app
+    version_project: robarm-sw
+    builders: [html]
+    needs: {source: json}
+
   # upstream documents (built locally from the sibling west projects, D35)
   se-req:
     title: "Stakeholder and System Requirements Specification"
